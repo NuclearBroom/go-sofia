@@ -1,12 +1,11 @@
 # Stage 1. Build the binary
-FROM golang:1.11
+FROM golang:1.10
 
 # add a non-privileged user
 RUN useradd -u 10001 myapp
 
 RUN mkdir -p /go/src/github.com/NuclearBroom/go-sofia
-ADD . /go/src/github.com/NuclearBroom
-/go-sofia
+ADD . /go/src/github.com/NuclearBroom/go-sofia
 WORKDIR /go/src/github.com/NuclearBroom/go-sofia
 
 # build the binary with go build
